@@ -1,11 +1,28 @@
 import React from 'react';
+import DataStore from '../flux/stores/DataStores';
+import BlogGridPanel from './BlogGridPanel';
 
 class BlogGrid extends React.Component {
 	render (){
-		// console.log(this.props.postdata);
+		let itemPost;
+		let allData = DataStore.getAllPosts();
+		if(allData){
+			itemPost = allData.map(blogJSON => {
+				console.log('Blog Grid');
+				console.log(blogJSON);
+				return(
+					<BlogGridPanel key={blogJSON.id} postdata={blogJSON} />
+				)
+			});
+		}else{
+			console.log('no blog post');
+		}
 		return (
-			<div className="panel-blog">
-				<div dangerouslySetInnerHTML={{ __html: this.props.postdata.excerpt.rendered }}>
+			<div className="grid-main">
+				<div className="container">
+				<div className="row">
+					{itemPost}
+				</div>
 				</div>
 
 			</div>

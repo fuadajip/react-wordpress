@@ -1,0 +1,20 @@
+{
+  "name": "src",
+  "homepage": "https://github.com/fuadajip/react-wordpress",
+  "authors": [
+    "fuadajip <fuadajipratomo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
