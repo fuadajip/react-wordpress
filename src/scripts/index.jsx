@@ -4,25 +4,26 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
+import DataActions from './flux/actions/DataActions';
 import Home from './components/Home';
+import { render } from 'react-dom';
 
+class AppInitializer {
+	run() {
+		DataActions.getPages((response)=>{
+				render(
+						<Router>
+								<div>
+										<Switch>
+												<Route path="/" component={ Home } exact />
+												<Route render={() => { return <Redirect to="/" /> }} />
+										</Switch>
+								</div>
+						</Router>
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-
-class AppInitializer extends React.Component {
-  render() {
-    return (
-      <Router>
-        <div>
-          <Switch>
-            <Route path="/" component={Home} exact />
-            <Route render={() => <Redirect to="/" />} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+						, document.getElementById('root')
+				);
+		});
+	}
 }
-
-ReactDOM.render(<AppInitializer />, document.getElementById('app'));
+new AppInitializer().run();

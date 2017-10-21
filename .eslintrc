@@ -20,7 +20,8 @@
 			"error", {
 			   "devDependencies": true
 			}
-		]
+		],
+		"class-methods-use-this": ["disabled"]
 
 	}
 }
