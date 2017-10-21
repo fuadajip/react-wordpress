@@ -12,16 +12,15 @@ class AppInitializer {
 	run() {
 		DataActions.getPages((response)=>{
 				render(
-						<Router>
-								<div>
-										<Switch>
-												<Route path="/" component={ Home } exact />
-												<Route render={() => { return <Redirect to="/" /> }} />
-										</Switch>
-								</div>
-						</Router>
-
-						, document.getElementById('root')
+					<Router>
+						<div>
+							<Switch>
+									<Route path="/" component={ Home } exact />
+									<Route render={() => { return <Redirect to="/" /> }} />
+							</Switch>
+						</div>
+					</Router>
+					, document.getElementById('root')
 				);
 		});
 	}

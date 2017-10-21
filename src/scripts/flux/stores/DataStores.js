@@ -14,7 +14,9 @@ class DataStore {
       getAll: this.getAll,
       getAllPages: this.getAllPages,
       getAllPosts: this.getAllPosts,
-      getPageBySlug: this.getPageBySlug,
+			getPageBySlug: this.getPageBySlug,
+			getAllCategories: this.getAllCategories,
+			getPostCategories: this.getPostCategories,
     });
   }
 
@@ -42,7 +44,17 @@ class DataStore {
   getPageBySlug(slug) {
     const pages = this.getState().data.pages;
     return pages[Object.keys(pages).find((page, i) => pages[page].slug === slug)] || {};
-  }
+	}
+
+	getAllCategories(){
+		return this.getState().data.categories;
+	}
+
+	getPostCategories(id){
+		const categories = this.getState().data.categories;
+		return categories[Object.keys(categories).find((category, i) =>
+			categories[category].id == id)] || {};
+	}
 }
 
 export default alt.createStore(DataStore, 'DataStore');
