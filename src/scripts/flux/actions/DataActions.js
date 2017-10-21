@@ -5,7 +5,7 @@ class DataActions {
   constructor() {
     const appUrl = 'http://fuadajip.com/wordpress'; // wordpress instalation
     this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // endpoint for wordpress pages
-    this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // endpoint for wordpress posts
+		this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts?_embed`; // endpoint for wordpress posts
   }
 
   // method to get data from endpoint
@@ -36,7 +36,7 @@ class DataActions {
 				cb(payload); // This callback will be used for dynamic rout building
 		});
 		return true;
-}
+	}
 
 
   // this returnes an object with Pages and Posts data together
