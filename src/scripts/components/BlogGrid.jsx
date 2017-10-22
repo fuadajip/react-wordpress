@@ -1,7 +1,7 @@
 import React from 'react';
 import DataStore from '../flux/stores/DataStores';
 import BlogGridPanel from './BlogGridPanel';
-
+import BlogDetail from './BlogDetail';
 
 class BlogGrid extends React.Component {
 	render (){
@@ -9,8 +9,6 @@ class BlogGrid extends React.Component {
 		let allData = DataStore.getAllPosts();
 		if(allData){
 			itemPost = allData.map(blogJSON => {
-				console.log('Blog Grid Component');
-				// console.log(blogJSON);
 				return(
 					<BlogGridPanel key={blogJSON.id} postdata={blogJSON} />
 				)

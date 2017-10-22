@@ -9,7 +9,7 @@ module.exports = {
     // this will make the server understand "/some-link" routs instead of "/#/some-link"
     hot: true,
     inline: true,
-    port: 3020,
+    port: 3000,
   },
   entry: path.resolve(__dirname, 'src/scripts/index.jsx'),
   output: {
