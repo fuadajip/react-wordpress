@@ -8,6 +8,7 @@ import DataActions from './flux/actions/DataActions';
 import Home from './components/Home';
 import BlogDetail from './components/BlogDetail';
 import { render } from 'react-dom';
+import Navbar from './components/Navbar';
 
 class AppInitializer {
 	buildRoutes(data){
@@ -27,6 +28,7 @@ class AppInitializer {
 				render(
 					<Router>
 						<div>
+							<Navbar />
 							<Switch>
 									<Route path="/" component={ Home } exact />
 									{this.buildRoutes(response)}

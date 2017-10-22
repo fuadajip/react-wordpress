@@ -11,11 +11,11 @@ class BlogDetail extends React.Component {
 			<div className="blogdetail-main">
 				<div className="container">
 					<div className="row">
-					<h3 style={{textAlign: 'center'}}>{post.title.rendered }</h3>
 						<div className="col-md-8 col-sm-8 col-xs-12 col-centered">
 							<div className="post-featured-image">
 								<img src={thumbnailImage} className="img-responsive"/>
 							</div>
+							<h3 style={{textAlign: 'center'}}>{post.title.rendered }</h3>
 							<div className="post-main-article" dangerouslySetInnerHTML={{ __html: post.content.rendered }}>
 							</div>
 						</div>

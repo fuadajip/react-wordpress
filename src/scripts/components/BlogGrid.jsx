@@ -1,7 +1,6 @@
 import React from 'react';
 import DataStore from '../flux/stores/DataStores';
 import BlogGridPanel from './BlogGridPanel';
-import BlogDetail from './BlogDetail';
 
 class BlogGrid extends React.Component {
 	render (){
@@ -23,7 +22,6 @@ class BlogGrid extends React.Component {
 					{itemPost}
 				</div>
 				</div>
-
 			</div>
 		)
 	}
