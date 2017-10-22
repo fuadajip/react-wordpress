@@ -17,6 +17,7 @@ class DataStore {
 			getPageBySlug: this.getPageBySlug,
 			getAllCategories: this.getAllCategories,
 			getPostCategories: this.getPostCategories,
+			getPostBySlug: this.getPostBySlug,
     });
   }
 
@@ -44,6 +45,11 @@ class DataStore {
   getPageBySlug(slug) {
     const pages = this.getState().data.pages;
     return pages[Object.keys(pages).find((page, i) => pages[page].slug === slug)] || {};
+	}
+
+	getPostBySlug(slug) {
+		const posts = this.getState().data.posts;
+		return posts[Object.keys(posts).find((post, i)=> posts[post].slug === slug)] || {};
 	}
 
 	getAllCategories(){
